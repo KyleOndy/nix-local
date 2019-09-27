@@ -2,8 +2,6 @@
   "builders": [
     {
       "boot_command": [
-        "root<enter>",
-        "stop sshd<enter>",
         "fdisk /dev/sda<enter>",
         "n",
         "<enter><enter><enter><enter><enter>",
