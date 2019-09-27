@@ -11,10 +11,10 @@
         "mkfs.ext4 -j -L nixos /dev/sda1<enter><wait5>",
         "mount LABEL=nixos /mnt<enter><wait>",
         "nixos-generate-config --root /mnt<enter><wait>",
-        "curl --max-time 5 http://{{ .HTTPIP }}:{{ .HTTPPort }}/configuration.nix > /mnt/etc/nixos/configuration.nix<enter><wait>",
-        "curl --max-time 5 http://{{ .HTTPIP }}:{{ .HTTPPort }}/guest-virtualbox.nix > /mnt/etc/nixos/guest.nix<enter><wait>",
-        "curl --max-time 5 http://{{ .HTTPIP }}:{{ .HTTPPort }}/users-vagrant.nix > /mnt/etc/nixos/users.nix<enter><wait>",
-        "<wait120>",
+        "curl --max-time 30 http://{{ .HTTPIP }}:{{ .HTTPPort }}/configuration.nix > /mnt/etc/nixos/configuration.nix<enter><wait>",
+        "curl --max-time 30 http://{{ .HTTPIP }}:{{ .HTTPPort }}/guest-virtualbox.nix > /mnt/etc/nixos/guest.nix<enter><wait>",
+        "curl --max-time 30 http://{{ .HTTPIP }}:{{ .HTTPPort }}/users-vagrant.nix > /mnt/etc/nixos/users.nix<enter><wait>",
+        "<wait300>",
         "nixos-install && reboot<enter>"
       ],
       "boot_wait": "1m",
@@ -28,7 +28,7 @@
       "output_directory": "output",
       "shutdown_command": "shutdown -P now",
       "ssh_username": "root",
-      "ssh_wait_timeout": "3m",
+      "ssh_wait_timeout": "1m",
       "type": "vmware-iso"
     }
   ],
