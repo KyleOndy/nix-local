@@ -1,0 +1,20 @@
+{
+  "builders": [
+    {
+      "boot_command": [
+        "fdisk /dev/sda<enter>"
+      ],
+      "boot_wait": "1m",
+      "cpus": 2,
+      "display_name": "nixos",
+      "iso_checksum": "0967701e23c613df9a43d912fcbe8588d0af11934ec6697c48405c1d2ba97a85",
+      "iso_checksum_type": "sha256",
+      "iso_url": "https://releases.nixos.org/nixos/19.03/nixos-19.03.173552.bd5e8f35c2e/nixos-minimal-19.03.173552.bd5e8f35c2e-x86_64-linux.iso",
+      "memory": 4096,
+      "output_directory": "output"
+      "shutdown_command": "shutdown -P now",
+      "ssh_username": "root",
+      "type": "vmware-iso"
+    }
+  ]
+}
