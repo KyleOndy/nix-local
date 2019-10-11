@@ -1,0 +1,3 @@
+[submodule "nixbox"]
+	path = nixbox
+	url = https://github.com/nix-community/nixbox.git
