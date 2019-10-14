@@ -12,10 +12,12 @@ Vagrant.configure("2") do |config|
   # disable default folder?
   config.vm.synced_folder '.', '/vagrant', disabled: true
 
-  config.vm.synced_folder "C:/blackstone/src/nix-config", "/root/nix-config",
+  config.vm.synced_folder "C:/blackstone/src/nix-config", "/root/src/nix-config",
+    create: true,
     disabled: false,
     type: 'rsync',
-    rsync__exclude: [".git/" ".vagrant"]
+    # need to sync the .git for makefile to work
+    rsync__exclude: [".vagrant/"]
 
 
     config.vm.provision "shell", path: "provision.sh"

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "hello!"
+pushd "$HOME/src/nix-config"
+nix-shell --command make
