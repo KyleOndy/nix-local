@@ -3,9 +3,9 @@ Vagrant.configure("2") do |config|
   config.vm.define :nixos do |nixos|
     nixos.vm.box = "nixos"
     nixos.vm.provider :libvirt do |domain|
-      domain.cpus = 2
-      domain.cputopology :sockets => '1', :cores => '2', :threads => '1'
-      domain.memory = 2048
+      domain.cpus = 3
+      domain.cputopology :sockets => '1', :cores => '3', :threads => '1'
+      domain.memory = 4096
       domain.graphics_type = 'vnc'
     end
   end
