@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
     end
   end
 
-  config.vm.synced_folder '.', '/vagrant', enabled: 'false'
+  config.vm.synced_folder '.', '/vagrant', disabled: true
   config.vm.synced_folder '/home/kondy/src/dotfile-nix',
     '/home/vagrant/nix-config', enabled: 'true', type: 'rsync'
 
